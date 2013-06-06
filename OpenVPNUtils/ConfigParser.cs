@@ -149,5 +149,73 @@ namespace OpenVPNUtils
             fsr.Close();
             return false;
         }
+
+        /// <summary>
+        /// Returns all the directives of the config file.
+        /// </summary>
+        /// <returns>
+        /// A dictionary of directives with 
+        /// - the key being the name of the directive in lower case 
+        /// - the value being the directive as an array: 
+        /// the first element is the name of the directive (in lowercase),
+        /// the other (optional) elements are the parameters</returns>
+        public Dictionary<String, String[]> GetAllDirectives()
+        {
+            Dictionary<String,String[]> retVal = new Dictionary<String,String[]>();
+            using (StreamReader fsr = (new FileInfo(m_cfile)).OpenText())
+            {
+                while (!fsr.EndOfStream)
+                {
+                    String line = fsr.ReadLine().Trim();
+
+                    if (!line.StartsWith("#") &&
+                        !line.StartsWith(";") &&
+                        !String.IsNullOrEmpty(line))
+                    {
+                        String[] parsedLine = parseLine(line);
+                        parsedLine[0] = parsedLine[0].ToLowerInvariant();
+                        try
+                        {
+                            retVal.Add(parsedLine[0], parsedLine);
+                        }
+                        catch (ArgumentException)
+                        {
+                            String errorMessage = String.Format("The directive {0} is found twice in the OpenVPN config file {1}.", parsedLine[0], m_cfile);
+                            throw new FormatException(errorMessage);
+                        }
+                    }
+                }
+                return retVal;
+            }
+        }
+
+        /// <summary>
+        /// Writes a array of directives to the config file
+        /// </summary>
+        /// <param name="directives">
+        /// A dictionary of directives with 
+        /// - the key being the name of the directive in lower case 
+        /// - the value being the directive as an array: 
+        /// the first element is the name of the directive (in lowercase),
+        /// the other (optional) elements are the parameters</param>
+        public void WriteConfig(Dictionary<String,String[]> directives)
+        {
+            using (StreamWriter fsw = new StreamWriter(m_cfile))
+            {
+                foreach (KeyValuePair<String, String[]> directive in directives)
+                {
+                    String line = String.Empty;
+                    foreach (String param in directive.Value)
+                    {
+                        String word = param;
+                        if (word.Contains(" "))
+                            word = "\"\"".Insert(1, word);
+                        word = word.Replace(@"\", @"\\");
+                        line += word + " ";
+                    }
+                    fsw.WriteLine(line.Trim());
+                }
+            }
+        }
     }
 }

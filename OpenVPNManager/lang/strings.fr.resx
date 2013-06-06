@@ -305,4 +305,16 @@ Modifiez l'un des dossier ou modifiez l'extension des fichiers du service.</valu
   <data name="VPNSTATE_ASSIGN_IP" xml:space="preserve">
     <value>Récupération de l'adresse IP...</value>
   </data>
+  <data name="BOX_VPN_Config_Not_Supported" xml:space="preserve">
+    <value>Le fichier de configuration de cette connexion n'est pas supporté par l'interface de configuration d'OpenVPN Manager. Voulez-vous éditer cette configuration avec Notepad?</value>
+  </data>
+  <data name="DIALOG_Title_Open_CACert" xml:space="preserve">
+    <value>Sélectionnez le certificat racine (CA)</value>
+  </data>
+  <data name="DIALOG_Title_Open_PrivateKey" xml:space="preserve">
+    <value>Sélectionnez la clé secrète</value>
+  </data>
+  <data name="DIALOG_Title_Open_UserCert" xml:space="preserve">
+    <value>Sélectionnez le certificat de l'utilisateur</value>
+  </data>
 </root>

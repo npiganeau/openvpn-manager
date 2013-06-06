@@ -300,4 +300,16 @@ Change one of the directories or change the service file extension.</value>
 Please also update the service (using the service tab) if the
 service should also use the new location.</value>
   </data>
+  <data name="BOX_VPN_Config_Not_Supported" xml:space="preserve">
+    <value>The configuration file of this connection is not supported by OpenVPN Manager configuration interface. Do you want to Edit the configuration in with Notepad ?</value>
+  </data>
+  <data name="DIALOG_Title_Open_CACert" xml:space="preserve">
+    <value>Select CA certificate file</value>
+  </data>
+  <data name="DIALOG_Title_Open_PrivateKey" xml:space="preserve">
+    <value>Select private key file</value>
+  </data>
+  <data name="DIALOG_Title_Open_UserCert" xml:space="preserve">
+    <value>Select user certificate file</value>
+  </data>
 </root>

@@ -530,19 +530,32 @@ namespace OpenVPNManager
         /// </summary>
         public void Edit()
         {
-            ProcessStartInfo pi = new ProcessStartInfo();
-            pi.Arguments = "\"" + m_file + "\"";
-            pi.ErrorDialog = true;
-            pi.FileName = "notepad.exe";
-            pi.UseShellExecute = true;
+            if (ConfigWrapper.SupportsConfigFile(m_file))
+            {
+                FrmEditConfig frmEC = new FrmEditConfig(m_file);
+                frmEC.ShowDialog();
+            }
+            else
+            {
+                if (RTLMessageBox.Show(m_status,
+                    Program.res.GetString("BOX_VPN_Config_Not_Supported"),
+                    MessageBoxButtons.YesNo, MessageBoxDefaultButton.Button2,
+                    MessageBoxIcon.Error) == DialogResult.Yes)
+                {
+                    ProcessStartInfo pi = new ProcessStartInfo();
+                    pi.Arguments = "\"" + m_file + "\"";
+                    pi.ErrorDialog = true;
+                    pi.FileName = "notepad.exe";
+                    pi.UseShellExecute = true;
 
-            Process p = new Process();
-            p.StartInfo = pi;
-            p.EnableRaisingEvents = true;
-            p.Exited += new EventHandler(p_Exited);
+                    Process p = new Process();
+                    p.StartInfo = pi;
+                    p.EnableRaisingEvents = true;
+                    p.Exited += new EventHandler(p_Exited);
 
-            p.Start();
-
+                    p.Start();
+                }
+            }
         }
 
         /// <summary>

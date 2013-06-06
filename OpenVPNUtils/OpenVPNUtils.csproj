@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigParser.cs" />
+    <Compile Include="ConfigWrapper.cs" />
     <Compile Include="UtilsHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
