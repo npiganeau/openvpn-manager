@@ -306,7 +306,9 @@ Modifiez l'un des dossier ou modifiez l'extension des fichiers du service.</valu
     <value>Récupération de l'adresse IP...</value>
   </data>
   <data name="BOX_VPN_Config_Not_Supported" xml:space="preserve">
-    <value>Le fichier de configuration de cette connexion n'est pas supporté par l'interface de configuration d'OpenVPN Manager. Voulez-vous éditer cette configuration avec Notepad?</value>
+    <value>Le fichier de configuration de cette connexion n'est pas supporté par l'interface de configuration d'OpenVPN Manager.
+
+Voulez-vous éditer cette configuration avec Notepad?</value>
   </data>
   <data name="DIALOG_Title_Open_CACert" xml:space="preserve">
     <value>Sélectionnez le certificat racine (CA)</value>
@@ -316,5 +318,17 @@ Modifiez l'un des dossier ou modifiez l'extension des fichiers du service.</valu
   </data>
   <data name="DIALOG_Title_Open_UserCert" xml:space="preserve">
     <value>Sélectionnez le certificat de l'utilisateur</value>
+  </data>
+  <data name="DIALOG_Title_Open_KeyFile" xml:space="preserve">
+    <value>Sélectionnez la clé pour l'authentification TLS supplémentaire</value>
+  </data>
+  <data name="BOX_Config_Not_Saved" xml:space="preserve">
+    <value>La configuration n'a pas pu être sauvegardée en raison d'une erreur interne</value>
+  </data>
+  <data name="BOX_Config_Proxy_Address_Missing" xml:space="preserve">
+    <value>La configuration utilise un serveur mandataire, mais aucune adresse n'a été donnée</value>
+  </data>
+  <data name="DIALOG_Title_Open_StaticKey" xml:space="preserve">
+    <value>Selectionnez la fichier de la clé statique secrète</value>
   </data>
 </root>

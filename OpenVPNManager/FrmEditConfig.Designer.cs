@@ -32,38 +32,60 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditConfig));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVPN = new System.Windows.Forms.TabPage();
-            this.btnClearPrivateKey = new System.Windows.Forms.Button();
-            this.btnClearUserCertificate = new System.Windows.Forms.Button();
-            this.btnClearCACertificate = new System.Windows.Forms.Button();
-            this.btnBrowsePrivateKey = new System.Windows.Forms.Button();
-            this.btnBrowseUserCertificate = new System.Windows.Forms.Button();
-            this.btnBrowseCACertificate = new System.Windows.Forms.Button();
-            this.txtPrivateKey = new System.Windows.Forms.TextBox();
-            this.txtUserCertificate = new System.Windows.Forms.TextBox();
-            this.txtCACertificate = new System.Windows.Forms.TextBox();
-            this.comboAuthenticationType = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panStaticKey = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtStaticKey = new System.Windows.Forms.TextBox();
+            this.comboStaticKeyDirection = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btnBrowseStaticKey = new System.Windows.Forms.Button();
+            this.btnClearStaticKey = new System.Windows.Forms.Button();
+            this.panPKCS11 = new System.Windows.Forms.Panel();
+            this.comboPKCS11Providers = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panTLS = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRemoteHost = new System.Windows.Forms.TextBox();
+            this.txtUserCertificate = new System.Windows.Forms.TextBox();
+            this.btnBrowsePrivateKey = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnBrowseUserCertificate = new System.Windows.Forms.Button();
+            this.btnClearUserCertificate = new System.Windows.Forms.Button();
+            this.txtPrivateKey = new System.Windows.Forms.TextBox();
+            this.btnClearPrivateKey = new System.Windows.Forms.Button();
+            this.panCa = new System.Windows.Forms.Panel();
+            this.txtCACertificate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnBrowseCACertificate = new System.Windows.Forms.Button();
+            this.btnClearCACertificate = new System.Windows.Forms.Button();
+            this.comboAuthenticationMethod = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtRemoteHost = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabIPv4 = new System.Windows.Forms.TabPage();
-            this.tabIPv6 = new System.Windows.Forms.TabPage();
+            this.panManual = new System.Windows.Forms.Panel();
+            this.txtRemoteIPAddress = new System.Windows.Forms.TextBox();
+            this.txtLocalIPAddress = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtRoutes = new System.Windows.Forms.TextBox();
+            this.panAutomatic = new System.Windows.Forms.Panel();
+            this.cbIgnorePushedRoutes = new System.Windows.Forms.CheckBox();
+            this.cbRedirectGateway = new System.Windows.Forms.CheckBox();
+            this.comboMethod = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabAdvanced = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.gbTLSAuthentication = new System.Windows.Forms.GroupBox();
+            this.comboKeyDirection = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.cbUseAddtionalTLSAuth = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnClearKeyFile = new System.Windows.Forms.Button();
+            this.txtSubjectMatch = new System.Windows.Forms.TextBox();
+            this.btnBrowseKeyFile = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtKeyFile = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbProxyShowPassword = new System.Windows.Forms.CheckBox();
@@ -71,6 +93,7 @@
             this.txtProxyUsername = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.cbProxyNeedAuthentication = new System.Windows.Forms.CheckBox();
             this.cbProxyRetry = new System.Windows.Forms.CheckBox();
             this.numProxyPort = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
@@ -79,7 +102,7 @@
             this.comboProxyType = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboHmacAuthentication = new System.Windows.Forms.ComboBox();
             this.comboCipher = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -102,11 +125,25 @@
             this.txtConfigName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.txtRoutesIPv6 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cbEnableIPv6 = new System.Windows.Forms.CheckBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtLocalIPv6Address = new System.Windows.Forms.TextBox();
+            this.txtRemoteIPv6Address = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabVPN.SuspendLayout();
+            this.panStaticKey.SuspendLayout();
+            this.panPKCS11.SuspendLayout();
+            this.panTLS.SuspendLayout();
+            this.panCa.SuspendLayout();
+            this.tabIPv4.SuspendLayout();
+            this.panManual.SuspendLayout();
+            this.panAutomatic.SuspendLayout();
             this.tabAdvanced.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbTLSAuthentication.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProxyPort)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -121,7 +158,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabVPN);
             this.tabControl1.Controls.Add(this.tabIPv4);
-            this.tabControl1.Controls.Add(this.tabIPv6);
             this.tabControl1.Controls.Add(this.tabAdvanced);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
@@ -130,47 +166,114 @@
             // tabVPN
             // 
             resources.ApplyResources(this.tabVPN, "tabVPN");
-            this.tabVPN.Controls.Add(this.btnClearPrivateKey);
-            this.tabVPN.Controls.Add(this.btnClearUserCertificate);
-            this.tabVPN.Controls.Add(this.btnClearCACertificate);
-            this.tabVPN.Controls.Add(this.btnBrowsePrivateKey);
-            this.tabVPN.Controls.Add(this.btnBrowseUserCertificate);
-            this.tabVPN.Controls.Add(this.btnBrowseCACertificate);
-            this.tabVPN.Controls.Add(this.txtPrivateKey);
-            this.tabVPN.Controls.Add(this.txtUserCertificate);
-            this.tabVPN.Controls.Add(this.txtCACertificate);
-            this.tabVPN.Controls.Add(this.comboAuthenticationType);
+            this.tabVPN.Controls.Add(this.panStaticKey);
+            this.tabVPN.Controls.Add(this.panPKCS11);
+            this.tabVPN.Controls.Add(this.panTLS);
+            this.tabVPN.Controls.Add(this.panCa);
+            this.tabVPN.Controls.Add(this.comboAuthenticationMethod);
             this.tabVPN.Controls.Add(this.label3);
-            this.tabVPN.Controls.Add(this.label8);
             this.tabVPN.Controls.Add(this.label4);
-            this.tabVPN.Controls.Add(this.label7);
             this.tabVPN.Controls.Add(this.txtRemoteHost);
-            this.tabVPN.Controls.Add(this.label6);
             this.tabVPN.Controls.Add(this.label5);
             this.tabVPN.Controls.Add(this.label2);
             this.tabVPN.Name = "tabVPN";
             this.tabVPN.UseVisualStyleBackColor = true;
             // 
-            // btnClearPrivateKey
+            // panStaticKey
             // 
-            resources.ApplyResources(this.btnClearPrivateKey, "btnClearPrivateKey");
-            this.btnClearPrivateKey.Name = "btnClearPrivateKey";
-            this.btnClearPrivateKey.UseVisualStyleBackColor = true;
-            this.btnClearPrivateKey.Click += new System.EventHandler(this.btnClearPrivateKey_Click);
+            this.panStaticKey.Controls.Add(this.label25);
+            this.panStaticKey.Controls.Add(this.txtStaticKey);
+            this.panStaticKey.Controls.Add(this.comboStaticKeyDirection);
+            this.panStaticKey.Controls.Add(this.label27);
+            this.panStaticKey.Controls.Add(this.btnBrowseStaticKey);
+            this.panStaticKey.Controls.Add(this.btnClearStaticKey);
+            resources.ApplyResources(this.panStaticKey, "panStaticKey");
+            this.panStaticKey.Name = "panStaticKey";
             // 
-            // btnClearUserCertificate
+            // label25
             // 
-            resources.ApplyResources(this.btnClearUserCertificate, "btnClearUserCertificate");
-            this.btnClearUserCertificate.Name = "btnClearUserCertificate";
-            this.btnClearUserCertificate.UseVisualStyleBackColor = true;
-            this.btnClearUserCertificate.Click += new System.EventHandler(this.btnClearUserCertificate_Click);
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.Name = "label25";
             // 
-            // btnClearCACertificate
+            // txtStaticKey
             // 
-            resources.ApplyResources(this.btnClearCACertificate, "btnClearCACertificate");
-            this.btnClearCACertificate.Name = "btnClearCACertificate";
-            this.btnClearCACertificate.UseVisualStyleBackColor = true;
-            this.btnClearCACertificate.Click += new System.EventHandler(this.BtnClearCACertificateClick);
+            resources.ApplyResources(this.txtStaticKey, "txtStaticKey");
+            this.txtStaticKey.Name = "txtStaticKey";
+            // 
+            // comboStaticKeyDirection
+            // 
+            this.comboStaticKeyDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboStaticKeyDirection.FormattingEnabled = true;
+            this.comboStaticKeyDirection.Items.AddRange(new object[] {
+            resources.GetString("comboStaticKeyDirection.Items"),
+            resources.GetString("comboStaticKeyDirection.Items1"),
+            resources.GetString("comboStaticKeyDirection.Items2")});
+            resources.ApplyResources(this.comboStaticKeyDirection, "comboStaticKeyDirection");
+            this.comboStaticKeyDirection.Name = "comboStaticKeyDirection";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // btnBrowseStaticKey
+            // 
+            resources.ApplyResources(this.btnBrowseStaticKey, "btnBrowseStaticKey");
+            this.btnBrowseStaticKey.Name = "btnBrowseStaticKey";
+            this.btnBrowseStaticKey.UseVisualStyleBackColor = true;
+            this.btnBrowseStaticKey.Click += new System.EventHandler(this.btnBrowseStaticKey_Click);
+            // 
+            // btnClearStaticKey
+            // 
+            resources.ApplyResources(this.btnClearStaticKey, "btnClearStaticKey");
+            this.btnClearStaticKey.Name = "btnClearStaticKey";
+            this.btnClearStaticKey.UseVisualStyleBackColor = true;
+            this.btnClearStaticKey.Click += new System.EventHandler(this.btnClearStaticKey_Click);
+            // 
+            // panPKCS11
+            // 
+            this.panPKCS11.Controls.Add(this.comboPKCS11Providers);
+            this.panPKCS11.Controls.Add(this.label26);
+            resources.ApplyResources(this.panPKCS11, "panPKCS11");
+            this.panPKCS11.Name = "panPKCS11";
+            // 
+            // comboPKCS11Providers
+            // 
+            this.comboPKCS11Providers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboPKCS11Providers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboPKCS11Providers.FormattingEnabled = true;
+            this.comboPKCS11Providers.Items.AddRange(new object[] {
+            resources.GetString("comboPKCS11Providers.Items")});
+            resources.ApplyResources(this.comboPKCS11Providers, "comboPKCS11Providers");
+            this.comboPKCS11Providers.Name = "comboPKCS11Providers";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // panTLS
+            // 
+            this.panTLS.Controls.Add(this.label7);
+            this.panTLS.Controls.Add(this.txtUserCertificate);
+            this.panTLS.Controls.Add(this.btnBrowsePrivateKey);
+            this.panTLS.Controls.Add(this.label8);
+            this.panTLS.Controls.Add(this.btnBrowseUserCertificate);
+            this.panTLS.Controls.Add(this.btnClearUserCertificate);
+            this.panTLS.Controls.Add(this.txtPrivateKey);
+            this.panTLS.Controls.Add(this.btnClearPrivateKey);
+            resources.ApplyResources(this.panTLS, "panTLS");
+            this.panTLS.Name = "panTLS";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // txtUserCertificate
+            // 
+            resources.ApplyResources(this.txtUserCertificate, "txtUserCertificate");
+            this.txtUserCertificate.Name = "txtUserCertificate";
             // 
             // btnBrowsePrivateKey
             // 
@@ -179,12 +282,55 @@
             this.btnBrowsePrivateKey.UseVisualStyleBackColor = true;
             this.btnBrowsePrivateKey.Click += new System.EventHandler(this.btnBrowsePrivateKey_Click);
             // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
             // btnBrowseUserCertificate
             // 
             resources.ApplyResources(this.btnBrowseUserCertificate, "btnBrowseUserCertificate");
             this.btnBrowseUserCertificate.Name = "btnBrowseUserCertificate";
             this.btnBrowseUserCertificate.UseVisualStyleBackColor = true;
             this.btnBrowseUserCertificate.Click += new System.EventHandler(this.btnBrowseUserCertificate_Click);
+            // 
+            // btnClearUserCertificate
+            // 
+            resources.ApplyResources(this.btnClearUserCertificate, "btnClearUserCertificate");
+            this.btnClearUserCertificate.Name = "btnClearUserCertificate";
+            this.btnClearUserCertificate.UseVisualStyleBackColor = true;
+            this.btnClearUserCertificate.Click += new System.EventHandler(this.btnClearUserCertificate_Click);
+            // 
+            // txtPrivateKey
+            // 
+            resources.ApplyResources(this.txtPrivateKey, "txtPrivateKey");
+            this.txtPrivateKey.Name = "txtPrivateKey";
+            // 
+            // btnClearPrivateKey
+            // 
+            resources.ApplyResources(this.btnClearPrivateKey, "btnClearPrivateKey");
+            this.btnClearPrivateKey.Name = "btnClearPrivateKey";
+            this.btnClearPrivateKey.UseVisualStyleBackColor = true;
+            this.btnClearPrivateKey.Click += new System.EventHandler(this.btnClearPrivateKey_Click);
+            // 
+            // panCa
+            // 
+            this.panCa.Controls.Add(this.txtCACertificate);
+            this.panCa.Controls.Add(this.label6);
+            this.panCa.Controls.Add(this.btnBrowseCACertificate);
+            this.panCa.Controls.Add(this.btnClearCACertificate);
+            resources.ApplyResources(this.panCa, "panCa");
+            this.panCa.Name = "panCa";
+            // 
+            // txtCACertificate
+            // 
+            resources.ApplyResources(this.txtCACertificate, "txtCACertificate");
+            this.txtCACertificate.Name = "txtCACertificate";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
             // 
             // btnBrowseCACertificate
             // 
@@ -193,61 +339,40 @@
             this.btnBrowseCACertificate.UseVisualStyleBackColor = true;
             this.btnBrowseCACertificate.Click += new System.EventHandler(this.btnBrowseCACertificate_Click);
             // 
-            // txtPrivateKey
+            // btnClearCACertificate
             // 
-            resources.ApplyResources(this.txtPrivateKey, "txtPrivateKey");
-            this.txtPrivateKey.Name = "txtPrivateKey";
+            resources.ApplyResources(this.btnClearCACertificate, "btnClearCACertificate");
+            this.btnClearCACertificate.Name = "btnClearCACertificate";
+            this.btnClearCACertificate.UseVisualStyleBackColor = true;
+            this.btnClearCACertificate.Click += new System.EventHandler(this.BtnClearCACertificateClick);
             // 
-            // txtUserCertificate
+            // comboAuthenticationMethod
             // 
-            resources.ApplyResources(this.txtUserCertificate, "txtUserCertificate");
-            this.txtUserCertificate.Name = "txtUserCertificate";
-            // 
-            // txtCACertificate
-            // 
-            resources.ApplyResources(this.txtCACertificate, "txtCACertificate");
-            this.txtCACertificate.Name = "txtCACertificate";
-            // 
-            // comboAuthenticationType
-            // 
-            this.comboAuthenticationType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAuthenticationType.FormattingEnabled = true;
-            this.comboAuthenticationType.Items.AddRange(new object[] {
-            resources.GetString("comboAuthenticationType.Items"),
-            resources.GetString("comboAuthenticationType.Items1"),
-            resources.GetString("comboAuthenticationType.Items2")});
-            resources.ApplyResources(this.comboAuthenticationType, "comboAuthenticationType");
-            this.comboAuthenticationType.Name = "comboAuthenticationType";
+            this.comboAuthenticationMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAuthenticationMethod.FormattingEnabled = true;
+            this.comboAuthenticationMethod.Items.AddRange(new object[] {
+            resources.GetString("comboAuthenticationMethod.Items"),
+            resources.GetString("comboAuthenticationMethod.Items1"),
+            resources.GetString("comboAuthenticationMethod.Items2"),
+            resources.GetString("comboAuthenticationMethod.Items3")});
+            resources.ApplyResources(this.comboAuthenticationMethod, "comboAuthenticationMethod");
+            this.comboAuthenticationMethod.Name = "comboAuthenticationMethod";
+            this.comboAuthenticationMethod.SelectedIndexChanged += new System.EventHandler(this.comboAuthenticationMethod_SelectedIndexChanged);
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
             // txtRemoteHost
             // 
             resources.ApplyResources(this.txtRemoteHost, "txtRemoteHost");
             this.txtRemoteHost.Name = "txtRemoteHost";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
             // 
             // label5
             // 
@@ -261,100 +386,181 @@
             // 
             // tabIPv4
             // 
+            this.tabIPv4.Controls.Add(this.cbEnableIPv6);
+            this.tabIPv4.Controls.Add(this.panAutomatic);
+            this.tabIPv4.Controls.Add(this.panManual);
+            this.tabIPv4.Controls.Add(this.txtRoutesIPv6);
+            this.tabIPv4.Controls.Add(this.txtRoutes);
+            this.tabIPv4.Controls.Add(this.cbRedirectGateway);
+            this.tabIPv4.Controls.Add(this.comboMethod);
+            this.tabIPv4.Controls.Add(this.label23);
+            this.tabIPv4.Controls.Add(this.label24);
+            this.tabIPv4.Controls.Add(this.label22);
+            this.tabIPv4.Controls.Add(this.label20);
             resources.ApplyResources(this.tabIPv4, "tabIPv4");
             this.tabIPv4.Name = "tabIPv4";
             this.tabIPv4.UseVisualStyleBackColor = true;
             // 
-            // tabIPv6
+            // panManual
             // 
-            resources.ApplyResources(this.tabIPv6, "tabIPv6");
-            this.tabIPv6.Name = "tabIPv6";
-            this.tabIPv6.UseVisualStyleBackColor = true;
+            this.panManual.Controls.Add(this.txtRemoteIPv6Address);
+            this.panManual.Controls.Add(this.txtLocalIPv6Address);
+            this.panManual.Controls.Add(this.txtRemoteIPAddress);
+            this.panManual.Controls.Add(this.label30);
+            this.panManual.Controls.Add(this.txtLocalIPAddress);
+            this.panManual.Controls.Add(this.label29);
+            this.panManual.Controls.Add(this.label28);
+            this.panManual.Controls.Add(this.label21);
+            resources.ApplyResources(this.panManual, "panManual");
+            this.panManual.Name = "panManual";
+            // 
+            // txtRemoteIPAddress
+            // 
+            resources.ApplyResources(this.txtRemoteIPAddress, "txtRemoteIPAddress");
+            this.txtRemoteIPAddress.Name = "txtRemoteIPAddress";
+            // 
+            // txtLocalIPAddress
+            // 
+            resources.ApplyResources(this.txtLocalIPAddress, "txtLocalIPAddress");
+            this.txtLocalIPAddress.Name = "txtLocalIPAddress";
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.Name = "label28";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // txtRoutes
+            // 
+            resources.ApplyResources(this.txtRoutes, "txtRoutes");
+            this.txtRoutes.Name = "txtRoutes";
+            this.toolTip.SetToolTip(this.txtRoutes, resources.GetString("txtRoutes.ToolTip"));
+            // 
+            // panAutomatic
+            // 
+            this.panAutomatic.Controls.Add(this.cbIgnorePushedRoutes);
+            resources.ApplyResources(this.panAutomatic, "panAutomatic");
+            this.panAutomatic.Name = "panAutomatic";
+            // 
+            // cbIgnorePushedRoutes
+            // 
+            resources.ApplyResources(this.cbIgnorePushedRoutes, "cbIgnorePushedRoutes");
+            this.cbIgnorePushedRoutes.Name = "cbIgnorePushedRoutes";
+            this.cbIgnorePushedRoutes.UseVisualStyleBackColor = true;
+            // 
+            // cbRedirectGateway
+            // 
+            resources.ApplyResources(this.cbRedirectGateway, "cbRedirectGateway");
+            this.cbRedirectGateway.Name = "cbRedirectGateway";
+            this.cbRedirectGateway.UseVisualStyleBackColor = true;
+            // 
+            // comboMethod
+            // 
+            this.comboMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMethod.FormattingEnabled = true;
+            this.comboMethod.Items.AddRange(new object[] {
+            resources.GetString("comboMethod.Items"),
+            resources.GetString("comboMethod.Items1")});
+            resources.ApplyResources(this.comboMethod, "comboMethod");
+            this.comboMethod.Name = "comboMethod";
+            this.comboMethod.SelectedIndexChanged += new System.EventHandler(this.comboIPv4Method_SelectedIndexChanged);
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            this.toolTip.SetToolTip(this.label24, resources.GetString("label24.ToolTip"));
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.Name = "label20";
             // 
             // tabAdvanced
             // 
             resources.ApplyResources(this.tabAdvanced, "tabAdvanced");
-            this.tabAdvanced.Controls.Add(this.groupBox3);
+            this.tabAdvanced.Controls.Add(this.gbTLSAuthentication);
             this.tabAdvanced.Controls.Add(this.groupBox4);
             this.tabAdvanced.Controls.Add(this.groupBox2);
             this.tabAdvanced.Controls.Add(this.groupBox1);
             this.tabAdvanced.Name = "tabAdvanced";
             this.tabAdvanced.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // gbTLSAuthentication
             // 
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.cbUseAddtionalTLSAuth);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label11);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
+            this.gbTLSAuthentication.Controls.Add(this.comboKeyDirection);
+            this.gbTLSAuthentication.Controls.Add(this.label9);
+            this.gbTLSAuthentication.Controls.Add(this.cbUseAddtionalTLSAuth);
+            this.gbTLSAuthentication.Controls.Add(this.btnClearKeyFile);
+            this.gbTLSAuthentication.Controls.Add(this.txtSubjectMatch);
+            this.gbTLSAuthentication.Controls.Add(this.btnBrowseKeyFile);
+            this.gbTLSAuthentication.Controls.Add(this.label10);
+            this.gbTLSAuthentication.Controls.Add(this.txtKeyFile);
+            this.gbTLSAuthentication.Controls.Add(this.label11);
+            resources.ApplyResources(this.gbTLSAuthentication, "gbTLSAuthentication");
+            this.gbTLSAuthentication.Name = "gbTLSAuthentication";
+            this.gbTLSAuthentication.TabStop = false;
             // 
-            // radioButton2
+            // comboKeyDirection
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.comboKeyDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboKeyDirection, "comboKeyDirection");
+            this.comboKeyDirection.FormattingEnabled = true;
+            this.comboKeyDirection.Items.AddRange(new object[] {
+            resources.GetString("comboKeyDirection.Items"),
+            resources.GetString("comboKeyDirection.Items1"),
+            resources.GetString("comboKeyDirection.Items2")});
+            this.comboKeyDirection.Name = "comboKeyDirection";
             // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
             // 
-            // radioButton3
-            // 
-            resources.ApplyResources(this.radioButton3, "radioButton3");
-            this.radioButton3.Checked = true;
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // cbUseAddtionalTLSAuth
             // 
             resources.ApplyResources(this.cbUseAddtionalTLSAuth, "cbUseAddtionalTLSAuth");
             this.cbUseAddtionalTLSAuth.Name = "cbUseAddtionalTLSAuth";
             this.cbUseAddtionalTLSAuth.UseVisualStyleBackColor = true;
+            this.cbUseAddtionalTLSAuth.CheckedChanged += new System.EventHandler(this.cbUseAddtionalTLSAuth_CheckedChanged);
             // 
-            // button3
+            // btnClearKeyFile
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnClearKeyFile, "btnClearKeyFile");
+            this.btnClearKeyFile.Name = "btnClearKeyFile";
+            this.btnClearKeyFile.UseVisualStyleBackColor = true;
+            this.btnClearKeyFile.Click += new System.EventHandler(this.btnClearKeyFile_Click);
             // 
-            // textBox2
+            // txtSubjectMatch
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.txtSubjectMatch, "txtSubjectMatch");
+            this.txtSubjectMatch.Name = "txtSubjectMatch";
             // 
-            // button4
+            // btnBrowseKeyFile
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnBrowseKeyFile, "btnBrowseKeyFile");
+            this.btnBrowseKeyFile.Name = "btnBrowseKeyFile";
+            this.btnBrowseKeyFile.UseVisualStyleBackColor = true;
+            this.btnBrowseKeyFile.Click += new System.EventHandler(this.btnBrowseKeyFile_Click);
             // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
-            // textBox3
+            // txtKeyFile
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
+            resources.ApplyResources(this.txtKeyFile, "txtKeyFile");
+            this.txtKeyFile.Name = "txtKeyFile";
             // 
             // label11
             // 
@@ -368,6 +574,7 @@
             this.groupBox4.Controls.Add(this.txtProxyUsername);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.cbProxyNeedAuthentication);
             this.groupBox4.Controls.Add(this.cbProxyRetry);
             this.groupBox4.Controls.Add(this.numProxyPort);
             this.groupBox4.Controls.Add(this.label17);
@@ -407,6 +614,13 @@
             resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
             // 
+            // cbProxyNeedAuthentication
+            // 
+            resources.ApplyResources(this.cbProxyNeedAuthentication, "cbProxyNeedAuthentication");
+            this.cbProxyNeedAuthentication.Name = "cbProxyNeedAuthentication";
+            this.cbProxyNeedAuthentication.UseVisualStyleBackColor = true;
+            this.cbProxyNeedAuthentication.CheckedChanged += new System.EventHandler(this.cbProxyNeedAuthentication_CheckedChanged);
+            // 
             // cbProxyRetry
             // 
             resources.ApplyResources(this.cbProxyRetry, "cbProxyRetry");
@@ -416,6 +630,11 @@
             // numProxyPort
             // 
             resources.ApplyResources(this.numProxyPort, "numProxyPort");
+            this.numProxyPort.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
             this.numProxyPort.Name = "numProxyPort";
             // 
             // label17
@@ -439,9 +658,11 @@
             this.comboProxyType.FormattingEnabled = true;
             this.comboProxyType.Items.AddRange(new object[] {
             resources.GetString("comboProxyType.Items"),
-            resources.GetString("comboProxyType.Items1")});
+            resources.GetString("comboProxyType.Items1"),
+            resources.GetString("comboProxyType.Items2")});
             resources.ApplyResources(this.comboProxyType, "comboProxyType");
             this.comboProxyType.Name = "comboProxyType";
+            this.comboProxyType.SelectedIndexChanged += new System.EventHandler(this.comboProxyType_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -450,7 +671,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.comboHmacAuthentication);
             this.groupBox2.Controls.Add(this.comboCipher);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -458,36 +679,21 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // comboBox2
+            // comboHmacAuthentication
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.Name = "comboBox2";
+            this.comboHmacAuthentication.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboHmacAuthentication.FormattingEnabled = true;
+            this.comboHmacAuthentication.Items.AddRange(new object[] {
+            resources.GetString("comboHmacAuthentication.Items")});
+            resources.ApplyResources(this.comboHmacAuthentication, "comboHmacAuthentication");
+            this.comboHmacAuthentication.Name = "comboHmacAuthentication";
             // 
             // comboCipher
             // 
             this.comboCipher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCipher.FormattingEnabled = true;
             this.comboCipher.Items.AddRange(new object[] {
-            resources.GetString("comboCipher.Items"),
-            resources.GetString("comboCipher.Items1"),
-            resources.GetString("comboCipher.Items2"),
-            resources.GetString("comboCipher.Items3"),
-            resources.GetString("comboCipher.Items4"),
-            resources.GetString("comboCipher.Items5"),
-            resources.GetString("comboCipher.Items6"),
-            resources.GetString("comboCipher.Items7"),
-            resources.GetString("comboCipher.Items8"),
-            resources.GetString("comboCipher.Items9"),
-            resources.GetString("comboCipher.Items10"),
-            resources.GetString("comboCipher.Items11"),
-            resources.GetString("comboCipher.Items12"),
-            resources.GetString("comboCipher.Items13"),
-            resources.GetString("comboCipher.Items14"),
-            resources.GetString("comboCipher.Items15"),
-            resources.GetString("comboCipher.Items16"),
-            resources.GetString("comboCipher.Items17")});
+            resources.GetString("comboCipher.Items")});
             resources.ApplyResources(this.comboCipher, "comboCipher");
             this.comboCipher.Name = "comboCipher";
             // 
@@ -660,19 +866,56 @@
             this.btnSave.Image = global::OpenVPNManager.Properties.Resources.BUTTON_Close;
             resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
-            this.toolTip1.SetToolTip(this.btnSave, resources.GetString("btnSave.ToolTip"));
+            this.toolTip.SetToolTip(this.btnSave, resources.GetString("btnSave.ToolTip"));
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Image = global::OpenVPNManager.Properties.Resources.BUTTON_Cancel;
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.toolTip1.SetToolTip(this.btnCancel, resources.GetString("btnCancel.ToolTip"));
+            this.toolTip.SetToolTip(this.btnCancel, resources.GetString("btnCancel.ToolTip"));
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // txtRoutesIPv6
+            // 
+            resources.ApplyResources(this.txtRoutesIPv6, "txtRoutesIPv6");
+            this.txtRoutesIPv6.Name = "txtRoutesIPv6";
+            this.toolTip.SetToolTip(this.txtRoutesIPv6, resources.GetString("txtRoutesIPv6.ToolTip"));
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            this.toolTip.SetToolTip(this.label23, resources.GetString("label23.ToolTip"));
+            // 
+            // cbEnableIPv6
+            // 
+            resources.ApplyResources(this.cbEnableIPv6, "cbEnableIPv6");
+            this.cbEnableIPv6.Name = "cbEnableIPv6";
+            this.cbEnableIPv6.UseVisualStyleBackColor = true;
+            this.cbEnableIPv6.CheckedChanged += new System.EventHandler(this.cbEnableIPv6_CheckedChanged);
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // label30
+            // 
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.Name = "label30";
+            // 
+            // txtLocalIPv6Address
+            // 
+            resources.ApplyResources(this.txtLocalIPv6Address, "txtLocalIPv6Address");
+            this.txtLocalIPv6Address.Name = "txtLocalIPv6Address";
+            // 
+            // txtRemoteIPv6Address
+            // 
+            resources.ApplyResources(this.txtRemoteIPv6Address, "txtRemoteIPv6Address");
+            this.txtRemoteIPv6Address.Name = "txtRemoteIPv6Address";
             // 
             // FrmEditConfig
             // 
@@ -685,12 +928,27 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmEditConfig";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEditConfig_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabVPN.ResumeLayout(false);
             this.tabVPN.PerformLayout();
+            this.panStaticKey.ResumeLayout(false);
+            this.panStaticKey.PerformLayout();
+            this.panPKCS11.ResumeLayout(false);
+            this.panPKCS11.PerformLayout();
+            this.panTLS.ResumeLayout(false);
+            this.panTLS.PerformLayout();
+            this.panCa.ResumeLayout(false);
+            this.panCa.PerformLayout();
+            this.tabIPv4.ResumeLayout(false);
+            this.tabIPv4.PerformLayout();
+            this.panManual.ResumeLayout(false);
+            this.panManual.PerformLayout();
+            this.panAutomatic.ResumeLayout(false);
+            this.panAutomatic.PerformLayout();
             this.tabAdvanced.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbTLSAuthentication.ResumeLayout(false);
+            this.gbTLSAuthentication.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProxyPort)).EndInit();
@@ -719,7 +977,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboAuthenticationType;
+        private System.Windows.Forms.ComboBox comboAuthenticationMethod;
         private System.Windows.Forms.TextBox txtCACertificate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClearCACertificate;
@@ -732,7 +990,6 @@
         private System.Windows.Forms.TextBox txtUserCertificate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TabPage tabIPv6;
         private System.Windows.Forms.TabPage tabAdvanced;
         private System.Windows.Forms.CheckBox cbUseTCPConnection;
         private System.Windows.Forms.CheckBox cbUseCompLZO;
@@ -740,15 +997,14 @@
         private System.Windows.Forms.CheckBox cbUseCustomNegoInterval;
         private System.Windows.Forms.NumericUpDown numRemotePort;
         private System.Windows.Forms.CheckBox cbUseCustomPort;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbTLSAuthentication;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnClearKeyFile;
+        private System.Windows.Forms.Button btnBrowseKeyFile;
+        private System.Windows.Forms.TextBox txtKeyFile;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSubjectMatch;
         private System.Windows.Forms.CheckBox cbUseAddtionalTLSAuth;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -758,11 +1014,9 @@
         private System.Windows.Forms.CheckBox cbUseTAPDevice;
         private System.Windows.Forms.NumericUpDown numMTU;
         private System.Windows.Forms.NumericUpDown numFragmentSize;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboHmacAuthentication;
         private System.Windows.Forms.ComboBox comboCipher;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -781,6 +1035,40 @@
         private System.Windows.Forms.CheckBox cbProxyShowPassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ComboBox comboKeyDirection;
+        private System.Windows.Forms.CheckBox cbProxyNeedAuthentication;
+        private System.Windows.Forms.ComboBox comboMethod;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox cbRedirectGateway;
+        private System.Windows.Forms.CheckBox cbIgnorePushedRoutes;
+        private System.Windows.Forms.Panel panCa;
+        private System.Windows.Forms.Panel panStaticKey;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtStaticKey;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button btnBrowseStaticKey;
+        private System.Windows.Forms.Button btnClearStaticKey;
+        private System.Windows.Forms.ComboBox comboStaticKeyDirection;
+        private System.Windows.Forms.Panel panTLS;
+        private System.Windows.Forms.Panel panPKCS11;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox comboPKCS11Providers;
+        private System.Windows.Forms.Panel panManual;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtRemoteIPAddress;
+        private System.Windows.Forms.TextBox txtLocalIPAddress;
+        private System.Windows.Forms.Panel panAutomatic;
+        private System.Windows.Forms.TextBox txtRoutes;
+        private System.Windows.Forms.CheckBox cbEnableIPv6;
+        private System.Windows.Forms.TextBox txtRemoteIPv6Address;
+        private System.Windows.Forms.TextBox txtLocalIPv6Address;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtRoutesIPv6;
+        private System.Windows.Forms.Label label23;
     }
 }

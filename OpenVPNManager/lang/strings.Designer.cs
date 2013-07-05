@@ -125,6 +125,24 @@ namespace OpenVPNManager.lang {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à The configuration could not be saved to file due to an internal error.
+        /// </summary>
+        internal static string BOX_Config_Not_Saved {
+            get {
+                return ResourceManager.GetString("BOX_Config_Not_Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The configuration requires a proxy server, but no address is provided..
+        /// </summary>
+        internal static string BOX_Config_Proxy_Address_Missing {
+            get {
+                return ResourceManager.GetString("BOX_Config_Proxy_Address_Missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Unable to connect!
         ///
         ///Details:.
@@ -259,7 +277,9 @@ namespace OpenVPNManager.lang {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The configuration file of this connection is not supported by OpenVPN Manager configuration interface. Do you want to Edit the configuration in with Notepad ?.
+        ///   Recherche une chaîne localisée semblable à The configuration file of this connection is not supported by OpenVPN Manager configuration interface. 
+        ///
+        ///Do you want to Edit the configuration in with Notepad ?.
         /// </summary>
         internal static string BOX_VPN_Config_Not_Supported {
             get {
@@ -358,6 +378,15 @@ namespace OpenVPNManager.lang {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Select the key file for additional TLS authentication.
+        /// </summary>
+        internal static string DIALOG_Title_Open_KeyFile {
+            get {
+                return ResourceManager.GetString("DIALOG_Title_Open_KeyFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Search OpenVPN.
         /// </summary>
         internal static string DIALOG_Title_Open_OpenVPN {
@@ -372,6 +401,15 @@ namespace OpenVPNManager.lang {
         internal static string DIALOG_Title_Open_PrivateKey {
             get {
                 return ResourceManager.GetString("DIALOG_Title_Open_PrivateKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Select the secret static key file.
+        /// </summary>
+        internal static string DIALOG_Title_Open_StaticKey {
+            get {
+                return ResourceManager.GetString("DIALOG_Title_Open_StaticKey", resourceCulture);
             }
         }
         

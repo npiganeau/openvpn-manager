@@ -145,6 +145,12 @@ Gültige Werte sind:
   <data name="BOX_Config_Error" xml:space="preserve">
     <value>Konnte Konfiguration nicht laden. Datei wird ignoriert!</value>
   </data>
+  <data name="BOX_Config_Not_Saved" xml:space="preserve">
+    <value>The configuration could not be saved to file due to an internal error</value>
+  </data>
+  <data name="BOX_Config_Proxy_Address_Missing" xml:space="preserve">
+    <value>The configuration requires a proxy server, but no address is provided.</value>
+  </data>
   <data name="BOX_Error_Connect" xml:space="preserve">
     <value>Fehler beim Verbinden!
 
@@ -223,6 +229,9 @@ falls dieser ebenfalls die neue Datei verwenden soll.</value>
   </data>
   <data name="DIALOG_Title_Open_OpenVPN" xml:space="preserve">
     <value>OpenVPN suchen</value>
+  </data>
+  <data name="DIALOG_Title_Open_StaticKey" xml:space="preserve">
+    <value>Select the secret static key file</value>
   </data>
   <data name="QUICKINFO_Connect" xml:space="preserve">
     <value>Verbinden (Alt+O)</value>

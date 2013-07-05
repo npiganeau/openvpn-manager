@@ -301,7 +301,9 @@ Please also update the service (using the service tab) if the
 service should also use the new location.</value>
   </data>
   <data name="BOX_VPN_Config_Not_Supported" xml:space="preserve">
-    <value>The configuration file of this connection is not supported by OpenVPN Manager configuration interface. Do you want to Edit the configuration in with Notepad ?</value>
+    <value>The configuration file of this connection is not supported by OpenVPN Manager configuration interface. 
+
+Do you want to Edit the configuration in with Notepad ?</value>
   </data>
   <data name="DIALOG_Title_Open_CACert" xml:space="preserve">
     <value>Select CA certificate file</value>
@@ -311,5 +313,17 @@ service should also use the new location.</value>
   </data>
   <data name="DIALOG_Title_Open_UserCert" xml:space="preserve">
     <value>Select user certificate file</value>
+  </data>
+  <data name="DIALOG_Title_Open_KeyFile" xml:space="preserve">
+    <value>Select the key file for additional TLS authentication</value>
+  </data>
+  <data name="BOX_Config_Not_Saved" xml:space="preserve">
+    <value>The configuration could not be saved to file due to an internal error</value>
+  </data>
+  <data name="BOX_Config_Proxy_Address_Missing" xml:space="preserve">
+    <value>The configuration requires a proxy server, but no address is provided.</value>
+  </data>
+  <data name="DIALOG_Title_Open_StaticKey" xml:space="preserve">
+    <value>Select the secret static key file</value>
   </data>
 </root>

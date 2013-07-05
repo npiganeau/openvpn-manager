@@ -4,6 +4,7 @@ using System.IO;
 using Microsoft.Win32;
 using System.Security;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace OpenVPNUtils
 {
@@ -70,7 +71,7 @@ namespace OpenVPNUtils
                     if ((new FileInfo(pa)).Exists)
                         return pa;
                 }
-                catch(DirectoryNotFoundException)
+                catch (DirectoryNotFoundException)
                 {
                 }
             }
@@ -78,7 +79,7 @@ namespace OpenVPNUtils
             // search openvpn in program files
             pathVar = Path.Combine(System.Environment.GetFolderPath(
                 Environment.SpecialFolder.ProgramFiles),
-                "openvpn" + Path.DirectorySeparatorChar + "bin" + 
+                "openvpn" + Path.DirectorySeparatorChar + "bin" +
                 Path.DirectorySeparatorChar + "openvpn.exe");
 
             try
@@ -141,7 +142,7 @@ namespace OpenVPNUtils
         {
             string p = Path.GetFullPath(Path.Combine(vpnbin,
                 string.Join(Path.DirectorySeparatorChar.ToString(),
-                new string[] { "..", "..", "config"})));
+                new string[] { "..", "..", "config" })));
 
             try
             {
@@ -167,7 +168,7 @@ namespace OpenVPNUtils
                 return files;
             try
             {
-                GetConfigFiles(new DirectoryInfo(configdir), files, 
+                GetConfigFiles(new DirectoryInfo(configdir), files,
                     "ovpn", true);
             }
             catch (DirectoryNotFoundException)
@@ -259,6 +260,78 @@ namespace OpenVPNUtils
             k.Close();
 
             return ret;
+        }
+
+        /// <summary>
+        /// Get the list of all the ciphers that are supported by the installed OpenVPN 
+        /// </summary>
+        /// <returns>The list of ciphers</returns>
+        public static String[] GetSupportedCiphers()
+        {
+            List<String> retVals = new List<string>();
+            
+            foreach (String line in RunOpenVPNStandalone("--show-ciphers"))
+                retVals.Add(line.Split(' ')[0]);         
+ 
+            return retVals.ToArray();
+        }
+
+        /// <summary>
+        /// Get the list of all the digests that are supported by the installed OpenVPN 
+        /// </summary>
+        /// <returns>The list of digests</returns>
+        public static String[] GetSupportedDigests()
+        {
+            List<String> retVals = new List<string>();
+
+            foreach (String line in RunOpenVPNStandalone("--show-digests"))
+                retVals.Add(line.Split(' ')[0]);
+
+            return retVals.ToArray();
+        }
+
+        /// <summary>
+        /// Run OpenVPN in standalone mode to get information
+        /// </summary>
+        /// <param name="argument">The argument to pass to OpenVPN. Must start with "--show" otherwise throws an exception.</param>
+        /// <param name="skipHeader">OpenVPN returns a header explaining the purpose of the command. 
+        /// - If set to true, do not return this header, but only the data lines. 
+        /// - If false, returns everything. 
+        /// Defaults to true.</param>
+        /// <returns>An array of String corresponding to each lines returned by OpenVPN</returns>
+        private static String[] RunOpenVPNStandalone(String argument, bool skipHeader = true)
+        {
+            if (!argument.StartsWith("--show"))
+                throw new ArgumentException();
+
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = LocateOpenVPN();
+            psi.Arguments = argument;
+            psi.UseShellExecute = false;
+            psi.RedirectStandardOutput = true;
+            psi.CreateNoWindow = true;
+            Process p = new Process();
+            p.StartInfo = psi;
+            p.Start();
+
+            StreamReader stream = p.StandardOutput;
+            bool header = skipHeader;
+            List<String> retVals = new List<string>();
+
+            while (!stream.EndOfStream)
+            {
+                String line = stream.ReadLine();
+                if (header)
+                {
+                    if (line.Equals(String.Empty))
+                        header = false;
+                    continue;
+                }
+                if (!line.Equals(String.Empty))
+                    retVals.Add(line);
+            }
+
+            return retVals.ToArray();
         }
     }
 }
